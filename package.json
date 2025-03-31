@@ -1,0 +1,16 @@
+{
+  "name": "dip-example",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "@types/node": "^20.10.5"
+  }
+}
