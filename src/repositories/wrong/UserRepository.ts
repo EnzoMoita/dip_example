@@ -1,11 +1,10 @@
 import { User } from '../../models/User';
 
-// ❌ Bad Example: Concrete implementation without abstraction
+// ❌ Bad Example: Implementação concreta sem abstração
 export class UserRepository {
   private users: User[] = [];
 
   constructor() {
-    // Simulate database with some test users
     this.users.push({
       id: '1',
       email: 'test@example.com',

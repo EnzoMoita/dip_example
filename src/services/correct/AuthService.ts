@@ -1,11 +1,11 @@
 import { IUserRepository } from '../../interfaces/IUserRepository';
 
-// ✅ Good Example: High-level module depends on abstraction
+// ✅ Depende da abstração, não da implementação concreta
 export class AuthService {
   private userRepository: IUserRepository;
 
   constructor(userRepository: IUserRepository) {
-    // Dependency injection through constructor
+    // Recebe o repositorio através de injeção de dependência
     this.userRepository = userRepository;
   }
 
@@ -13,7 +13,9 @@ export class AuthService {
     const user = await this.userRepository.findByEmail(email);
     if (!user) return false;
     
-    // Simplified password check (in real world, use proper password hashing)
     return user.password === password;
   }
 }
+
+
+// Segue a DIP por que depende da abstração e não da implementação concreta

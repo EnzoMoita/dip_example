@@ -1,7 +1,8 @@
 import { User } from '../../models/User';
 import { IUserRepository } from '../../interfaces/IUserRepository';
 
-// ✅ Good Example: Implementation of the abstract interface
+// ✅ Good Example: Implementação concreta que implementa o contrato abstrato, ou seja implemmenta a interface
+//do user
 export class UserRepository implements IUserRepository {
   private users: User[] = [];
 

@@ -1,11 +1,11 @@
 import { UserRepository } from '../../repositories/wrong/UserRepository';
 
-// ❌ Bad Example: High-level module (AuthService) depends directly on low-level module (UserRepository)
+// ❌ Bad Example - Implementação concreta sem abstração
 export class AuthService {
   private userRepository: UserRepository;
 
   constructor() {
-    // Direct dependency on concrete implementation - violates DIP
+    // Here - Dependency directly userRepository
     this.userRepository = new UserRepository();
   }
 
@@ -13,7 +13,8 @@ export class AuthService {
     const user = await this.userRepository.findByEmail(email);
     if (!user) return false;
     
-    // Simplified password check (in real world, use proper password hashing)
     return user.password === password;
   }
 }
+
+// Viola a DIP por que o modulo de alto nivel depende diretamente do modulo de baixo nivel
